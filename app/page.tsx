@@ -1,42 +1,7 @@
-'use client';
-
-import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import type { CSSProperties } from 'react';
 
 function Phone({ src, alt, className = '', style }: { src: string; alt: string; className?: string; style?: CSSProperties }) {
   return <div className={`phone-frame ${className}`} style={style}><img src={src} alt={alt} /></div>;
-}
-
-function DynamicHeroPhone() {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const targetProgress = useRef(0);
-  const frame = useRef<number | null>(null);
-
-  useEffect(() => {
-    const animate = () => {
-      setScrollProgress((current) => {
-        const next = current + (targetProgress.current - current) * 0.08;
-        if (Math.abs(targetProgress.current - next) > 0.001) frame.current = requestAnimationFrame(animate);
-        else frame.current = null;
-        return next;
-      });
-    };
-    const update = () => {
-      targetProgress.current = Math.max(0, Math.min(1, window.scrollY / (window.innerHeight * 1.1)));
-      if (frame.current === null) frame.current = requestAnimationFrame(animate);
-    };
-    update();
-    window.addEventListener('scroll', update, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', update);
-      if (frame.current !== null) cancelAnimationFrame(frame.current);
-    };
-  }, []);
-
-  const rotateX = 2 + scrollProgress * 7;
-  const rotateY = -7 + scrollProgress * 18;
-  const rotateZ = -2 + scrollProgress * 5;
-  const lift = scrollProgress * -20;
-  return <Phone src="/screens-cutouts/log.png" alt="Momentum screen asking what you did today" style={{ transform: `perspective(1400px) translateY(${lift}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)` }} />;
 }
 
 export default function Home() {
@@ -54,7 +19,7 @@ export default function Home() {
           <p className="hero-lede">A simple, private way to keep track of the things you do — from running and football to coding, writing and everything in between.</p>
           <div className="hero-actions"><a className="button button-primary" href="#start">Start building momentum <span>↗</span></a><a className="text-link" href="#how">See how it works <span>↓</span></a></div>
         </div>
-        <div className="hero-visual"><div className="hero-glow" /><DynamicHeroPhone /></div>
+        <div className="hero-visual"><div className="hero-glow" /><Phone src="/screens-cutouts/log.png" alt="Momentum screen asking what you did today" /></div>
       </section>
 
       <section className="feature-section" id="how"><div className="core-lower standalone-feature"><div className="feature-copy"><div className="section-kicker">Core over content.</div><h2>Designed to get out of your way.</h2><p className="statement-lede">Your progress doesn&apos;t need an audience.</p><p>Log an activity in seconds, see the pattern forming, and get back to your day.</p><p className="noise-note">No feeds. No likes. No pressure.</p><div className="feature-points"><article><span>01</span><div><h3>Simple by design</h3><p>Choose what you did, add a little detail if you want, and save. That&apos;s it.</p></div></article><article><span>02</span><div><h3>Progress you can feel</h3><p>Quiet, useful insights that make showing up feel rewarding.</p></div></article><article><span>03</span><div><h3>Private by default</h3><p>Your activities are yours. No feeds, followers or public scoreboard.</p></div></article></div></div><div className="feature-phones"><Phone src="/screens-cutouts/stopwatch.png" alt="Momentum stopwatch screen" className="phone-small phone-back" /><Phone src="/screens-cutouts/progress.png" alt="Momentum progress screen" className="phone-small phone-front" /></div></div></section>
