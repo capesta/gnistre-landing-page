@@ -14,6 +14,8 @@
 @keyframes gnistre-word-pulse{0%,100%{color:rgba(255,184,107,.16);opacity:.38;text-shadow:none}45%{color:var(--spark);opacity:1;text-shadow:0 0 18px rgba(255,184,107,.34)}}
 .hero-glow{background:radial-gradient(circle,rgba(255,184,107,.16),rgba(255,184,107,0) 68%)}
 .final-orb{background:radial-gradient(ellipse,rgba(255,184,107,.16),transparent 66%)}
+.nav-shell .brand span{font-weight:700;letter-spacing:.2em;color:rgba(255,184,107,.55);opacity:.9;animation:gnistre-nav-pulse 5s ease-in-out infinite}
+@keyframes gnistre-nav-pulse{0%,100%{color:rgba(255,184,107,.42);opacity:.82;text-shadow:0 0 2px rgba(255,184,107,.08)}45%{color:var(--spark);opacity:1;text-shadow:0 0 18px rgba(255,184,107,.48)}}
 .brand img{animation:momentum-pulse 5s ease-in-out infinite}.brand span{animation:momentum-word-pulse 5s ease-in-out infinite}@keyframes momentum-pulse{0%,100%{box-shadow:0 0 0 0 rgba(131,246,169,0),0 0 0 rgba(131,246,169,0)}45%{box-shadow:0 0 0 5px rgba(131,246,169,.08),0 0 24px rgba(131,246,169,.34)}60%{box-shadow:0 0 0 8px rgba(131,246,169,0),0 0 10px rgba(131,246,169,.12)}}@keyframes momentum-word-pulse{0%,100%{text-shadow:0 0 0 rgba(131,246,169,0)}45%{text-shadow:0 0 16px rgba(131,246,169,.26)}}
 .statement-heading .section-kicker{margin-bottom:22px}.statement-heading h2{margin:0}
 @media(prefers-reduced-motion:reduce){.brand img,.brand span{animation:none}.phone-frame{transition:none}}
