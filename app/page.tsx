@@ -27,7 +27,7 @@ export default function Home() {
 
       <section className="final-section" id="start"><div className="final-orb" /><h2>Start where you are.<br /><em>Keep moving.</em></h2><p>Momentum is coming to the App Store.</p><a className="button button-primary" href="#top">Get notified at launch <span>↗</span></a><small>App Store link coming soon</small></section>
 
-      <footer className="footer"><a className="brand" href="#top"><img src="/momentum-icon.png" alt="" /><span>MOMENTUM</span></a><p>Private progress for real life.</p><span>© 2026 Momentum</span></footer>
+      <footer className="footer"><a className="brand" href="#top"><img src="/momentum-icon.png" alt="" /><span>MOMENTUM</span></a><p>Private progress for real life.</p><a className="footer-link" href="/privacy">Privacy</a><span>© 2026 Momentum</span></footer>
     </main>
   );
 }
