@@ -9,7 +9,6 @@ export default function Home() {
     <main>
       <nav className="nav-shell">
         <a className="brand" href="#top" aria-label="Momentum home"><img src="/momentum-icon.png" alt="" /><span>MOMENTUM</span></a>
-        <div className="nav-links"><a href="#why">Why Momentum</a><a href="#how">How it works</a><a href="#everyone">For everyone</a></div>
         <a className="nav-cta" href="#start">Get started <span>↗</span></a>
       </nav>
 
