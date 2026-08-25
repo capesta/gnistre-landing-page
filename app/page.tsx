@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, type CSSProperties } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 
 function Phone({ src, alt, className = '', style }: { src: string; alt: string; className?: string; style?: CSSProperties }) {
   return <div className={`phone-frame ${className}`} style={style}><img src={src} alt={alt} /></div>;
@@ -8,17 +8,35 @@ function Phone({ src, alt, className = '', style }: { src: string; alt: string; 
 
 function DynamicHeroPhone() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const targetProgress = useRef(0);
+  const frame = useRef<number | null>(null);
 
   useEffect(() => {
-    const update = () => setScrollProgress(Math.max(0, Math.min(1, window.scrollY / (window.innerHeight * 0.9))));
+    const animate = () => {
+      setScrollProgress((current) => {
+        const next = current + (targetProgress.current - current) * 0.08;
+        if (Math.abs(targetProgress.current - next) > 0.001) frame.current = requestAnimationFrame(animate);
+        else frame.current = null;
+        return next;
+      });
+    };
+    const update = () => {
+      targetProgress.current = Math.max(0, Math.min(1, window.scrollY / (window.innerHeight * 1.1)));
+      if (frame.current === null) frame.current = requestAnimationFrame(animate);
+    };
     update();
     window.addEventListener('scroll', update, { passive: true });
-    return () => window.removeEventListener('scroll', update);
+    return () => {
+      window.removeEventListener('scroll', update);
+      if (frame.current !== null) cancelAnimationFrame(frame.current);
+    };
   }, []);
 
-  const rotation = -2 + scrollProgress * 11;
-  const lift = scrollProgress * -18;
-  return <Phone src="/screens-cutouts/log.png" alt="Momentum screen asking what you did today" style={{ transform: `translateY(${lift}px) rotate(${rotation}deg)` }} />;
+  const rotateX = 2 + scrollProgress * 7;
+  const rotateY = -7 + scrollProgress * 18;
+  const rotateZ = -2 + scrollProgress * 5;
+  const lift = scrollProgress * -20;
+  return <Phone src="/screens-cutouts/log.png" alt="Momentum screen asking what you did today" style={{ transform: `perspective(1400px) translateY(${lift}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)` }} />;
 }
 
 export default function Home() {
@@ -39,7 +57,7 @@ export default function Home() {
         <div className="hero-visual"><div className="hero-glow" /><div className="hero-grid" /><DynamicHeroPhone /></div>
       </section>
 
-      <section className="statement-section" id="why"><div className="section-kicker">The Momentum difference</div><div className="statement-grid"><h2>Core over <span>content.</span></h2><div><p className="statement-lede">Your progress doesn&apos;t need an audience.</p><p>Momentum keeps the useful part of tracking and leaves the noise behind. No performance theatre. No endless scrolling. Just a clear space for the things you want to keep doing.</p><p className="noise-note">No feeds. No likes. No pressure.</p></div></div></section>
+      <section className="statement-section" id="why"><div className="statement-grid"><div className="statement-heading"><div className="section-kicker">The Momentum difference</div><h2>Core over <span>content.</span></h2></div><div><p className="statement-lede">Your progress doesn&apos;t need an audience.</p><p>Momentum keeps the useful part of tracking and leaves the noise behind. No performance theatre. No endless scrolling. Just a clear space for the things you want to keep doing.</p><p className="noise-note">No feeds. No likes. No pressure.</p></div></div></section>
 
       <section className="feature-section" id="how"><div className="feature-intro"><div className="section-kicker">Small friction. Big difference.</div><h2>Designed to get out of your way.</h2><p>Log an activity in seconds, see the pattern forming, and get back to your day.</p></div><div className="feature-layout"><div className="feature-points"><article><span>01</span><div><h3>Simple by design</h3><p>Choose what you did, add a little detail if you want, and save. That&apos;s it.</p></div></article><article><span>02</span><div><h3>Progress you can feel</h3><p>Quiet, useful insights that make showing up feel rewarding.</p></div></article><article><span>03</span><div><h3>Private by default</h3><p>Your activities are yours. No feeds, followers or public scoreboard.</p></div></article></div><div className="feature-phones"><Phone src="/screens-cutouts/stopwatch.png" alt="Momentum stopwatch screen" className="phone-small phone-back" /><Phone src="/screens-cutouts/progress.png" alt="Momentum progress screen" className="phone-small phone-front" /></div></div></section>
 
