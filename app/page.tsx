@@ -25,7 +25,7 @@ export default function Home() {
 
       <section className="everyone-section" id="everyone"><div className="everyone-copy"><div className="section-kicker">For every age. Every kind of movement.</div><h2>Not just workouts.<br /><em>Not just athletes.</em></h2><p>Gnistre is for school days, training days, creative days and everything in between — whether you&apos;re just getting started or already on your way.</p><a className="text-link" href="#start">Find your starting point <span>↗</span></a></div><div className="activity-collage"><Phone src="/screens-cutouts/activities.png" alt="Gnistre activity categories including creative and academic activities" className="collage-phone collage-back" /><Phone src="/screens-cutouts/sports.png" alt="Gnistre sports activity list" className="collage-phone collage-front" /></div></section>
 
-      <section className="final-section" id="start"><div className="final-orb" /><h2>Start where you are.<br /><em>Keep moving.</em></h2><p>Gnistre is coming to the App Store.</p><a className="button button-primary" href="#top">Get notified at launch <span>↗</span></a><small>App Store link coming soon</small></section>
+      <section className="final-section" id="start"><div className="final-orb" /><h2>Start where you are.<br /><em>Keep going.</em></h2><p>Gnistre is coming to the App Store.</p><a className="button button-primary" href="#top">Get notified at launch <span>↗</span></a><small>App Store link coming soon</small></section>
 
       <footer className="footer"><a className="brand" href="#top"><img src="/momentum-icon.png" alt="" /><span>GNISTRE</span></a><p>Private progress for real life.</p><a className="footer-link" href="/privacy">Privacy</a><span>© 2026 Gnistre</span></footer>
     </main>
