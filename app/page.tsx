@@ -1,5 +1,3 @@
-const activities = ['Running', 'Football', 'Coding', 'Writing', 'Hiking', 'Photography'];
-
 function Phone({ src, alt, className = '' }: { src: string; alt: string; className?: string }) {
   return <div className={`phone-frame ${className}`}><img src={src} alt={alt} /></div>;
 }
@@ -24,7 +22,7 @@ export default function Home() {
         <div className="hero-visual"><div className="hero-glow" /><div className="hero-grid" /><Phone src="/screens-cutouts/log.png" alt="Momentum screen asking what you did today" /></div>
       </section>
 
-      <section className="activity-strip"><p>Whatever moves you</p><div className="activity-list">{activities.map((activity) => <span key={activity}>{activity}</span>)}</div></section>
+      <section className="activity-strip"><p>Whatever moves you</p></section>
 
       <section className="statement-section" id="why"><div className="section-kicker">The Momentum difference</div><div className="statement-grid"><h2>Core over <span>content.</span></h2><div><p className="statement-lede">Your progress doesn&apos;t need an audience.</p><p>Momentum keeps the useful part of tracking and leaves the noise behind. No performance theatre. No endless scrolling. Just a clear space for the things you want to keep doing.</p></div></div></section>
 
