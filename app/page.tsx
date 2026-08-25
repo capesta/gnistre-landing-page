@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main>
       <nav className="nav-shell">
-        <a className="brand" href="#top" aria-label="Gnistre home"><img src="/momentum-icon.png" alt="" /><span>GNISTRE</span></a>
+        <a className="brand" href="#top" aria-label="Gnistre home"><img src="/gnistre-icon.png" alt="" /><span>GNISTRE</span></a>
         <a className="nav-cta" href="#start">Get started <span>↗</span></a>
       </nav>
 
@@ -27,7 +27,7 @@ export default function Home() {
 
       <section className="final-section" id="start"><div className="final-orb" /><h2>Start where you are.<br /><em>Keep going.</em></h2><p>Gnistre is coming to the App Store.</p><a className="button button-primary" href="#top">Get notified at launch <span>↗</span></a><small>App Store link coming soon</small></section>
 
-      <footer className="footer"><a className="brand" href="#top"><img src="/momentum-icon.png" alt="" /><span>GNISTRE</span></a><p>Private progress for real life.</p><a className="footer-link" href="/privacy">Privacy</a><span>© 2026 Gnistre</span></footer>
+      <footer className="footer"><a className="brand" href="#top"><img src="/gnistre-icon.png" alt="" /><span>GNISTRE</span></a><p>Private progress for real life.</p><a className="footer-link" href="/privacy">Privacy</a><span>© 2026 Gnistre</span></footer>
     </main>
   );
 }
