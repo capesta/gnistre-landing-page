@@ -1,5 +1,24 @@
-function Phone({ src, alt, className = '' }: { src: string; alt: string; className?: string }) {
-  return <div className={`phone-frame ${className}`}><img src={src} alt={alt} /></div>;
+'use client';
+
+import { useEffect, useState, type CSSProperties } from 'react';
+
+function Phone({ src, alt, className = '', style }: { src: string; alt: string; className?: string; style?: CSSProperties }) {
+  return <div className={`phone-frame ${className}`} style={style}><img src={src} alt={alt} /></div>;
+}
+
+function DynamicHeroPhone() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const update = () => setScrollProgress(Math.max(0, Math.min(1, window.scrollY / (window.innerHeight * 0.9))));
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    return () => window.removeEventListener('scroll', update);
+  }, []);
+
+  const rotation = -2 + scrollProgress * 11;
+  const lift = scrollProgress * -18;
+  return <Phone src="/screens-cutouts/log.png" alt="Momentum screen asking what you did today" style={{ transform: `translateY(${lift}px) rotate(${rotation}deg)` }} />;
 }
 
 export default function Home() {
@@ -13,18 +32,14 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow"><span className="eyebrow-dot" /> A little progress, every day</p>
           <h1>This one&apos;s <em>personal.</em></h1>
           <p className="hero-lede">A simple, private way to keep track of the things you do — from running and football to coding, writing and everything in between.</p>
           <div className="hero-actions"><a className="button button-primary" href="#start">Start building momentum <span>↗</span></a><a className="text-link" href="#how">See how it works <span>↓</span></a></div>
-          <p className="quiet-note"><span>✦</span> No feeds. No likes. No pressure.</p>
         </div>
-        <div className="hero-visual"><div className="hero-glow" /><div className="hero-grid" /><Phone src="/screens-cutouts/log.png" alt="Momentum screen asking what you did today" /></div>
+        <div className="hero-visual"><div className="hero-glow" /><div className="hero-grid" /><DynamicHeroPhone /></div>
       </section>
 
-      <section className="activity-strip"><p>Whatever moves you</p></section>
-
-      <section className="statement-section" id="why"><div className="section-kicker">The Momentum difference</div><div className="statement-grid"><h2>Core over <span>content.</span></h2><div><p className="statement-lede">Your progress doesn&apos;t need an audience.</p><p>Momentum keeps the useful part of tracking and leaves the noise behind. No performance theatre. No endless scrolling. Just a clear space for the things you want to keep doing.</p></div></div></section>
+      <section className="statement-section" id="why"><div className="section-kicker">The Momentum difference</div><div className="statement-grid"><h2>Core over <span>content.</span></h2><div><p className="statement-lede">Your progress doesn&apos;t need an audience.</p><p>Momentum keeps the useful part of tracking and leaves the noise behind. No performance theatre. No endless scrolling. Just a clear space for the things you want to keep doing.</p><p className="noise-note">No feeds. No likes. No pressure.</p></div></div></section>
 
       <section className="feature-section" id="how"><div className="feature-intro"><div className="section-kicker">Small friction. Big difference.</div><h2>Designed to get out of your way.</h2><p>Log an activity in seconds, see the pattern forming, and get back to your day.</p></div><div className="feature-layout"><div className="feature-points"><article><span>01</span><div><h3>Simple by design</h3><p>Choose what you did, add a little detail if you want, and save. That&apos;s it.</p></div></article><article><span>02</span><div><h3>Progress you can feel</h3><p>Quiet, useful insights that make showing up feel rewarding.</p></div></article><article><span>03</span><div><h3>Private by default</h3><p>Your activities are yours. No feeds, followers or public scoreboard.</p></div></article></div><div className="feature-phones"><Phone src="/screens-cutouts/stopwatch.png" alt="Momentum stopwatch screen" className="phone-small phone-back" /><Phone src="/screens-cutouts/progress.png" alt="Momentum progress screen" className="phone-small phone-front" /></div></div></section>
 
