@@ -9,7 +9,7 @@ export default function Home() {
     <main>
       <nav className="nav-shell">
         <a className="brand" href="#top" aria-label="Gnistre home"><img src="/gnistre-icon.png" alt="" /><span>GNISTRE</span></a>
-        <div className="nav-actions"><a className="nav-cta" href="#start"><span className="nav-cta-price">$2.99 once</span><span className="nav-cta-label">Get started</span><span className="nav-cta-arrow">↗</span></a></div>
+        <div className="nav-actions"><a className="nav-cta" href="#start"><span className="nav-cta-price"><span>$2.99</span><span className="nav-cta-once"> once</span></span><span className="nav-cta-label">Get started</span><span className="nav-cta-arrow">↗</span></a></div>
       </nav>
 
       <section className="hero" id="top">
