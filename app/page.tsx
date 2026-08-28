@@ -15,7 +15,7 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <h1>This one&apos;s <em>personal.</em></h1>
-          <p className="hero-lede">A simple, private way to keep track of the things you do — from running and football to coding, writing and everything in between. For all ages.</p>
+          <p className="hero-lede">A simple, fast and private way to keep track of the things you do — from running and football to coding, writing and everything in between. For all ages.</p>
           <div className="hero-actions"><a className="button button-primary" href="#start">Find what keeps you moving <span>↗</span></a><a className="text-link" href="#how">See how it works <span>↓</span></a></div>
         </div>
         <div className="hero-visual"><div className="hero-glow" /><Phone src="/screens-clean/log-road-cycling.png" alt="Gnistre home screen for logging an activity" /></div>
