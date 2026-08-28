@@ -32,6 +32,11 @@ jobs:
         run: |
           mkdir -p dist/client/privacy
           cp dist/client/privacy.html dist/client/privacy/index.html
+      - name: Apply project-site asset paths
+        run: |
+          find dist/client -type f \( -name '*.html' -o -name '*.rsc' -o -name '*.js' -o -name '*.css' \) -exec sed -i \
+            -e 's#"/_next/#"/gnistre-landing-page/_next/#g' \
+            -e "s#'/\_next/#'/gnistre-landing-page/_next/#g" {} +
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
