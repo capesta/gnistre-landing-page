@@ -3,6 +3,8 @@ export const metadata = {
   description: 'How Gnistre handles your data and protects your privacy.',
 };
 
+export const dynamic = 'force-static';
+
 const privacyItems = [
   ['Stored on this device', 'Your sessions, goals and preferences are stored locally on your iPhone in the current prototype.'],
   ['No account required', 'You do not need to provide your name, email address or date of birth to use the core app.'],
@@ -14,8 +16,8 @@ export default function PrivacyPage() {
   return (
     <main className="privacy-page">
       <nav className="nav-shell privacy-nav">
-        <a className="brand" href="/" aria-label="Gnistre home"><img src="/gnistre-icon.png" alt="" /><span>GNISTRE</span></a>
-        <a className="nav-cta" href="/">Back to Gnistre <span>↗</span></a>
+        <a className="brand" href="../" aria-label="Gnistre home"><img src="../gnistre-icon.png" alt="" /><span>GNISTRE</span></a>
+        <a className="nav-cta" href="../">Back to Gnistre <span>↗</span></a>
       </nav>
       <article className="privacy-card">
         <div className="section-kicker">Privacy by design</div>
@@ -27,7 +29,7 @@ export default function PrivacyPage() {
         <div className="privacy-control"><strong>Delete your data</strong><p>You can delete all activity data, goals and preferences from the Privacy screen inside the app.</p></div>
         <p className="privacy-updated">Gnistre Privacy Policy · Last updated August 2026</p>
       </article>
-      <footer className="footer privacy-footer"><a className="brand" href="/"><img src="/gnistre-icon.png" alt="" /><span>GNISTRE</span></a><p>Private progress for real life.</p><span>© 2026 Gnistre</span></footer>
+      <footer className="footer privacy-footer"><a className="brand" href="../"><img src="../gnistre-icon.png" alt="" /><span>GNISTRE</span></a><p>Private progress for real life.</p><span>© 2026 Gnistre</span></footer>
     </main>
   );
 }

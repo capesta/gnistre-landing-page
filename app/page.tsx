@@ -1,14 +1,14 @@
 import type { CSSProperties } from 'react';
 
 function Phone({ src, alt, className = '', style }: { src: string; alt: string; className?: string; style?: CSSProperties }) {
-  return <div className={`phone-frame ${className}`} style={style}><img src={src} alt={alt} /></div>;
+  return <div className={`phone-frame ${className}`} style={style}><img src={src.replace(/^\//, '')} alt={alt} /></div>;
 }
 
 export default function Home() {
   return (
     <main>
       <nav className="nav-shell">
-        <a className="brand" href="#top" aria-label="Gnistre home"><img src="/gnistre-icon.png" alt="" /><span>GNISTRE</span></a>
+        <a className="brand" href="#top" aria-label="Gnistre home"><img src="gnistre-icon.png" alt="" /><span>GNISTRE</span></a>
         <div className="nav-actions"><a className="nav-cta" href="#start"><span className="nav-cta-price"><span>$2.99</span><span className="nav-cta-once"> once</span></span><span className="nav-cta-label">Get started</span><span className="nav-cta-arrow">↗</span></a></div>
       </nav>
 
@@ -27,7 +27,7 @@ export default function Home() {
 
       <section className="final-section" id="start"><div className="final-orb" /><h2>Start where you are.<br /><em>Keep going.</em></h2><p className="price-line"><strong>$2.99 once.</strong> Full access.</p><p>Gnistre is coming to the App Store.</p><a className="button button-primary" href="#top">Get notified at launch <span>↗</span></a><small>No subscriptions. No ads. No data selling.</small></section>
 
-      <footer className="footer"><a className="brand" href="#top"><img src="/gnistre-icon.png" alt="" /><span>GNISTRE</span></a><p>Private progress for real life.</p><a className="footer-link" href="/privacy">Privacy</a><span>© 2026 Gnistre</span></footer>
+      <footer className="footer"><a className="brand" href="#top"><img src="gnistre-icon.png" alt="" /><span>GNISTRE</span></a><p>Private progress for real life.</p><a className="footer-link" href="privacy">Privacy</a><span>© 2026 Gnistre</span></footer>
     </main>
   );
 }
