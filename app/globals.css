@@ -50,6 +50,7 @@
 .manual-list{display:grid;grid-template-columns:1fr 1fr;gap:1px 36px;margin-top:70px;border-top:1px solid var(--line)}
 .manual-list section{padding:30px 0;border-bottom:1px solid var(--line)}
 .manual-list h2{font-size:18px;letter-spacing:-.02em;margin:0 0 9px}
+.manual-list h2,.manual-list a{color:var(--mint)}.manual-list strong{color:var(--mint)}
 .manual-list p,.manual-list li{color:var(--muted);font-size:14px;line-height:1.65}
 .manual-list p{margin:0}.manual-list ol,.manual-list ul{padding-left:22px;margin:12px 0 16px}
 .manual-list strong{color:var(--ink)}.manual-list code{color:var(--mint);font-family:inherit}
