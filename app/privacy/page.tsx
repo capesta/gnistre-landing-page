@@ -1,37 +1,36 @@
 export const metadata = {
-  title: 'Privacy — Gnistre',
-  description: 'How Gnistre handles your data and protects your privacy.',
+  title: 'Privacy — GNISTRE',
+  description: 'How GNISTRE handles your data and protects your privacy.',
 };
 
 export const dynamic = 'force-static';
 
-const privacyItems = [
-  ['Stored on this device', 'Your sessions, goals, preferences and saved distances are stored locally on your iPhone.'],
-  ['No account required', 'You do not need to provide your name, email address or date of birth to use the core app.'],
-  ['Optional location measurement', 'If you enable Distance tracking, GNISTRE uses your location only during an active, user-started session.'],
-  ['No route history', 'Raw GPS points are not stored. Only the final, aggregated distance is kept on your phone when you save the session.'],
-  ['No social sharing', 'Your progress is private. There are no public profiles, feeds, leaderboards or social media connections.'],
-  ['Age-specific GPS access', 'GPS measurement is available to users aged 13 and over. GNISTRE works fully without GPS as well.'],
+const privacySections = [
+  ['What GNISTRE stores', <><p>GNISTRE is designed to work without an account or social profile. You do not need to provide your name, email address or date of birth to use the core app.</p><p>Activity entries, goals, personal rewards, settings and free-text notes are stored locally on your device so the app can show your progress. GNISTRE does not sell this information or share it with advertisers.</p></>],
+  ['Optional distance tracking', <><p>If you choose to enable distance tracking for a supported activity, GNISTRE uses your device&apos;s location during a user-started workout to estimate distance.</p><p>Location is processed on your device. GNISTRE does not create or store a route history and does not share your location with other people or third parties. When you save the workout, GNISTRE stores only the final, aggregated distance for that activity, such as 8.6 km or 5.3 mi. Temporary location data used during the calculation is discarded when the session ends.</p><p>Distance tracking is optional. You can use the stopwatch and log activities manually without enabling location access.</p></>],
+  ['Children and young people', <><p>GPS distance tracking is available to users aged 13 and older. Users under 13 can use GNISTRE without GPS. The age group is self-declared in onboarding or Settings; GNISTRE does not ask for an exact date of birth. This is a product safeguard, not age verification.</p><p>Parents and guardians should review device permissions and use of the app according to the child&apos;s age and local requirements.</p></>],
+  ['Permissions and sharing', <><p>GNISTRE asks for location access only when you choose distance tracking for a supported workout. You can change or revoke this permission at any time in your device settings.</p><p>GNISTRE has no public profiles, leaderboards, social media connections, advertising, analytics services or server account.</p></>],
+  ['Deleting your data', <><p>You can delete individual activity entries from Activity Log. The Reset option in Settings removes the app&apos;s locally stored activity data, goals, rewards, favourites and preferences and starts the app again. Deleting the app also removes its locally stored data, subject to the behaviour of your device backup system.</p></>],
+  ['Contact', <><p>If you have questions about this privacy policy or how GNISTRE handles your data, contact <a href="mailto:hello@gnistre.app">hello@gnistre.app</a>.</p></>],
 ];
 
 export default function PrivacyPage() {
   return (
     <main className="privacy-page">
       <nav className="nav-shell privacy-nav">
-        <a className="brand" href="../" aria-label="Gnistre home"><img src="../gnistre-icon.png" alt="" /><span>GNISTRE</span></a>
-        <a className="nav-cta" href="../">Back to Gnistre <span>↗</span></a>
+        <a className="brand" href="/" aria-label="GNISTRE home"><img src="/gnistre-icon.png" alt="" /><span>GNISTRE</span></a>
+        <a className="nav-cta" href="/">Back to GNISTRE <span>↗</span></a>
       </nav>
       <article className="privacy-card">
         <div className="section-kicker">Privacy by design</div>
         <h1>Your data stays yours.</h1>
         <p className="privacy-lede">GNISTRE is designed to work without an account, social profile or data collection. Optional distance measurement stays on your phone.</p>
         <div className="privacy-list">
-          {privacyItems.map(([title, detail]) => <section key={title}><h2>{title}</h2><p>{detail}</p></section>)}
+          {privacySections.map(([title, detail]) => <section key={title as string}><h2>{title as string}</h2>{detail}</section>)}
         </div>
-        <div className="privacy-control"><strong>Delete your data</strong><p>You can delete all activity data, goals and preferences from the Privacy screen inside the app.</p></div>
-        <p className="privacy-updated">Gnistre Privacy Policy · Last updated August 2026</p>
+        <p className="privacy-updated">GNISTRE Privacy Policy · Last updated August 27, 2026</p>
       </article>
-      <footer className="footer privacy-footer"><a className="brand" href="/"><img src="/gnistre-icon.png" alt="" /><span>GNISTRE</span></a><p>Private progress for real life.</p><div className="footer-links"><a className="footer-link" href="/manual">User Manual</a><span>© 2026 Gnistre</span></div></footer>
+      <footer className="footer privacy-footer"><a className="brand" href="/"><img src="/gnistre-icon.png" alt="" /><span>GNISTRE</span></a><p>Private progress for real life.</p><div className="footer-links"><a className="footer-link" href="/manual">User Manual</a><span>© 2026 GNISTRE</span></div></footer>
     </main>
   );
 }
