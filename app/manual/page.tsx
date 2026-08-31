@@ -14,7 +14,7 @@ export default function ManualPage() {
       </nav>
       <article className="manual-card">
         <div className="section-kicker">User guide</div>
-        <h1>Find your way around GNISTRE.</h1>
+        <h1>Find your way around <em>GNISTRE.</em></h1>
         <p className="privacy-lede">A quick guide to recording activities, using the stopwatch and making progress your own.</p>
         <div className="manual-list">
           <section><h2>Getting started</h2><p>When you open GNISTRE for the first time:</p><ol><li>Choose your age group.</li><li>Choose up to five favorite activities.</li><li>Tap <strong>Done</strong>.</li></ol><p>Your favorites appear on the home screen and can be changed later in Settings.</p></section>
