@@ -6,10 +6,12 @@ export const metadata = {
 export const dynamic = 'force-static';
 
 const privacyItems = [
-  ['Stored on this device', 'Your sessions, goals and preferences are stored locally on your iPhone in the current prototype.'],
+  ['Stored on this device', 'Your sessions, goals, preferences and saved distances are stored locally on your iPhone.'],
   ['No account required', 'You do not need to provide your name, email address or date of birth to use the core app.'],
-  ['No location tracking', 'Gnistre does not need your location, contacts, camera or microphone. Distance can be entered manually when you choose.'],
-  ['No social sharing', 'Your progress is private. There are no public profiles, leaderboards or social media connections.'],
+  ['Optional location measurement', 'If you enable Distance tracking, GNISTRE uses your location only during an active, user-started session.'],
+  ['No route history', 'Raw GPS points are not stored. Only the final, aggregated distance is kept on your phone when you save the session.'],
+  ['No social sharing', 'Your progress is private. There are no public profiles, feeds, leaderboards or social media connections.'],
+  ['Age-specific GPS access', 'GPS measurement is available to users aged 13 and over. GNISTRE works fully without GPS as well.'],
 ];
 
 export default function PrivacyPage() {
@@ -22,14 +24,14 @@ export default function PrivacyPage() {
       <article className="privacy-card">
         <div className="section-kicker">Privacy by design</div>
         <h1>Your data stays yours.</h1>
-        <p className="privacy-lede">Gnistre is designed to work without an account, location tracking or a social profile.</p>
+        <p className="privacy-lede">GNISTRE is designed to work without an account, social profile or data collection. Optional distance measurement stays on your phone.</p>
         <div className="privacy-list">
           {privacyItems.map(([title, detail]) => <section key={title}><h2>{title}</h2><p>{detail}</p></section>)}
         </div>
         <div className="privacy-control"><strong>Delete your data</strong><p>You can delete all activity data, goals and preferences from the Privacy screen inside the app.</p></div>
         <p className="privacy-updated">Gnistre Privacy Policy · Last updated August 2026</p>
       </article>
-      <footer className="footer privacy-footer"><a className="brand" href="../"><img src="../gnistre-icon.png" alt="" /><span>GNISTRE</span></a><p>Private progress for real life.</p><span>© 2026 Gnistre</span></footer>
+      <footer className="footer privacy-footer"><a className="brand" href="/"><img src="/gnistre-icon.png" alt="" /><span>GNISTRE</span></a><p>Private progress for real life.</p><div className="footer-links"><a className="footer-link" href="/manual">User Manual</a><span>© 2026 Gnistre</span></div></footer>
     </main>
   );
 }
