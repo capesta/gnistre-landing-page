@@ -14,7 +14,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <h1>This one&apos;s <span className="word-rotator" aria-hidden="true"><span>personal.</span><span>for most of us.</span><span>fast.</span><span>easy.</span></span><span className="sr-only">personal.</span></h1>
+          <h1><span className="headline-intro">This one&apos;s</span><span className="word-rotator" aria-hidden="true"><span>personal.</span><span>for most of us.</span><span>fast.</span><span>easy.</span></span><span className="sr-only">personal.</span></h1>
           <p className="hero-lede">A simple, fast and private way to keep track of the things you do — from running and football to coding, writing and everything in between. For all ages.</p>
           <div className="hero-actions"><a className="button button-primary" href="#start">Find what keeps you moving <span>↗</span></a><a className="text-link" href="#how">See how it works <span>↓</span></a></div>
         </div>
