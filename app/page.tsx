@@ -27,7 +27,7 @@ export default function Home() {
 
       <section className="final-section" id="start"><div className="final-orb" /><h2>Start where you are.<br /><em>Keep going.</em></h2><p className="price-line"><strong>$2.99 once.</strong> Full access.</p><p>Gnistre is coming to the App Store.</p><a className="button button-primary" href="#top">Get notified at launch <span>↗</span></a><small>No subscriptions. No ads. No data selling.</small></section>
 
-      <footer className="footer"><a className="brand" href="#top"><img src="gnistre-icon.png" alt="" /><span>GNISTRE</span></a><p>Private progress for real life.</p><div className="footer-links"><a className="footer-link" href="/privacy">Privacy</a><a className="footer-link" href="/manual">User Manual</a></div><span>© 2026 Gnistre</span></footer>
+      <footer className="footer"><a className="brand" href="#top"><img src="gnistre-icon.png" alt="" /><span>GNISTRE</span></a><p>Private progress for real life.</p><div className="footer-links"><a className="footer-link" href="/privacy">Privacy</a><a className="footer-link" href="/manual">User Manual</a><a className="footer-link" href="mailto:hello@gnistre.app">hello@gnistre.app</a></div><span>© 2026 Gnistre</span></footer>
     </main>
   );
 }
